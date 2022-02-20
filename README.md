@@ -1,15 +1,15 @@
 # Simple usages of SplitJs, React and Redux 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This project demonstrates a simple React usage with hooks, Redux usage with Redux Toolkit, and also React-SplitJs as a 3rd party.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project demonstrates a simple React usage with hooks, Redux usage with Redux Toolkit, and also React-SplitJs as a 3rd party.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 
-## `npm i && npm start` (For bash, zhs etc.)
-## `npm i; npm start` (For command promp or PowerShell - Windows platforms)
+✔️ `npm i && npm start` (For bash, zhs etc.)
+✔️ `npm i; npm start` (For command promp or PowerShell - Windows platforms)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
