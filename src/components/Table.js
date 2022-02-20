@@ -29,7 +29,6 @@ const Table = () => {
 
   const filterCols = (key) => {
     const arr = cols.map(e => {
-      console.log('key', e.key, key)
       if (e.key === key) e.visible = !e.visible
       return e
     })
