@@ -1,6 +1,10 @@
 $color1: #102482;
 $color2: #3650a8;
 $color3: #5d6a97;
+$color4: #e7ecff;
+$light-grey: #e4e4e4;
+$border1: #ccc;
+$light-bg: #fff;
 
 .container {
   text-align: center;
@@ -65,6 +69,7 @@ $color3: #5d6a97;
   }
 }
 
+// Info Component
 .info-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -83,6 +88,48 @@ $color3: #5d6a97;
     h4 {
       margin: 6px 0 0 0;
     }
+  }
+}
+
+// Table & TableView Components
+.table-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  position: relative;
+
+  .table-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    height: 24px;
+    background-color: $light-grey;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .column-filter-popup {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: auto;
+    min-height: 200px;
+    background-color: $light-bg;
+    border-radius: 10px;
+    border: 1px solid $border1;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  table {
+    width: 100%;
   }
 }
 

@@ -2,6 +2,7 @@ import './App.scss';
 import Header from './components/Header'
 import Split from "react-split"
 import Info from './components/Info';
+import Table from './components/Table';
 
 import { useDispatch } from 'react-redux'
 import { rowResizer, colResizer } from './feature/draggerSlice'
@@ -33,8 +34,7 @@ function App() {
           minSize={260}
           onDrag={e => handleColDrag(e, 0)}
         >
-          <div>First Col</div>
-
+          <Table />
           <Info />
         </Split>
         <Split
