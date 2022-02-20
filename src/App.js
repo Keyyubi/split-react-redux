@@ -23,6 +23,18 @@ function App() {
     dispatch(rowResizer(values))
   }
 
+  // Storing SPLIT drag history on browser's sessionStorage
+  const handleDragEnd = (values, target) => {
+    const history = sessionStorage.getItem(target)
+    let arr = history && history.length > 0 ? JSON.parse(history) : []
+    
+    arr.push({ values, date: new Date() })
+
+    if (arr.length > 5) arr.shift()
+
+    sessionStorage.setItem(target, JSON.stringify(arr))
+  }
+
   return (
     <div className="container">
       <Header />
@@ -30,11 +42,13 @@ function App() {
         className='split'
         direction='vertical'
         onDrag={e => handleRowDrag(e)}
+        onDragEnd={e => handleDragEnd(e, 'vertical')}
       >
         <Split
           className='split-row'
           minSize={260}
           onDrag={e => handleColDrag(e, 0)}
+          onDragEnd={e => handleDragEnd(e, 'first-row')}
         >
           <Table />
           <Info />
@@ -42,6 +56,7 @@ function App() {
         <Split
           className='split-row'
           onDrag={e => handleColDrag(e, 1)}
+          onDragEnd={e => handleDragEnd(e, 'second-row')}
         >
           <Insert />
           <DummyCompo />
