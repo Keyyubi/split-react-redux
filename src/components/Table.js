@@ -10,15 +10,20 @@ const Table = () => {
   const [toggleFilter, setToggleFilter] = useState(false)
 
   const handleSelect = e => {
-    setData(datas[e.target.value])
-    const columns = Object.keys(datas[e.target.value][0]).map(el => {
-      return {
-        key: el,
-        width: 'auto',
-        label: el.replace('_', ' ').toUpperCase(),
-        visible: true
-      }
-    })
+    let tableData = []
+    let columns = []
+    if (e.target.value >= 0) {
+      tableData = datas[e.target.value]
+      columns = Object.keys(datas[e.target.value][0]).map(el => {
+        return {
+          key: el,
+          width: 'auto',
+          label: el.replace('_', ' ').toUpperCase(),
+          visible: true
+        }
+      })
+    }
+    setData(tableData)
     setCols(columns)
   }
 
@@ -41,7 +46,7 @@ const Table = () => {
     <div className='table-wrapper'>
       <div className='table-bar'>
         <select onChange={e => handleSelect(e)}>
-          <option>Seciniz..</option>
+          <option value={-1}>Seciniz..</option>
           <option value={0}>2018</option>
           <option value={1}>2019</option>
         </select>
