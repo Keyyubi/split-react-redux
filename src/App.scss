@@ -91,7 +91,7 @@ $light-bg: #fff;
   }
 }
 
-// Table & TableView Components
+// Table Component
 .table-wrapper {
   width: 100%;
   height: 100%;
@@ -131,6 +131,55 @@ $light-bg: #fff;
   table {
     width: 100%;
   }
+}
+
+// Insert Component
+.insert-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+
+  .row {
+    width: 100%;
+    height: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid $border1;
+
+    .row-input {
+      width: auto;
+      margin: 0 10px;
+      max-width: 100px;
+    }
+    
+    .btn-wrap {
+      min-width: 120px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+  }
+  
+  .col {
+    display: flex;
+    justify-self:stretch;
+    align-self: center;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .btn-row {
+    background-color: $light-grey;
+    border-bottom: none;
+  }
+}
+
+// Dummy Component
+.dummy-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {

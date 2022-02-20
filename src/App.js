@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Split from "react-split"
 import Info from './components/Info';
 import Table from './components/Table';
+import Insert from './components/Insert';
+import DummyCompo from './components/DummyCompo';
 
 import { useDispatch } from 'react-redux'
 import { rowResizer, colResizer } from './feature/draggerSlice'
@@ -41,8 +43,8 @@ function App() {
           className='split-row'
           onDrag={e => handleColDrag(e, 1)}
         >
-          <div>First Col</div>
-          <div>Second Col</div>
+          <Insert />
+          <DummyCompo />
         </Split>
       </Split>
     </div>
