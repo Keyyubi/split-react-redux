@@ -3,29 +3,29 @@ import { createSlice } from '@reduxjs/toolkit'
 export const draggerSlice = createSlice({
   name: 'dragger',
   initialState: {
-    rows: [0, 0],
+    rows: [50, 50],
     cols: [
-      [0, 0],
-      [0, 0]
+      [50, 50],
+      [50, 50]
     ]
   },
   reducers: {
     rowResizer: (state, action) => {
-      console.log('actri', action)
+      action.payload = action.payload.map(e => Math.round(e * 100) / 100)
 
-      state.rows = [0,0] //action.payload
+      state.rows = action.payload
     },
     colResizer: (state, action) => {
+      action.payload.values = action.payload.values.map(e => Math.round(e * 100) / 100)
       const arr = [...state.cols]
-      console.log('state1', state.cols)
 
       for (let i = 0; i < arr.length; i++) {
         if (i === action.payload.rowIndex) {
           arr[i] = action.payload.values
         }
       }
+
       state.cols = arr
-      console.log('state2', state.cols)
     }
   },
 })

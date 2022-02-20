@@ -65,6 +65,27 @@ $color3: #5d6a97;
   }
 }
 
+.info-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  .info {
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    height: 180px;
+    max-height: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: justify;
+  
+    h4 {
+      margin: 6px 0 0 0;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .logo {
     animation: App-logo-spin infinite 20s linear;
